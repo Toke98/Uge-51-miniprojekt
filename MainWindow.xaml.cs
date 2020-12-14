@@ -24,8 +24,6 @@ namespace Uge_51_miniprojekt
         {
             InitializeComponent();
 
-
-
         }
     }
 }

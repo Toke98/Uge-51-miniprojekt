@@ -1,0 +1,15 @@
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\bin\Debug\Uge 51 miniprojekt.exe.config
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\bin\Debug\Uge 51 miniprojekt.exe
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\bin\Debug\Uge 51 miniprojekt.pdb
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.csprojAssemblyReference.cache
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\MainWindow.g.cs
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\App.g.cs
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt_MarkupCompile.cache
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt_MarkupCompile.lref
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\MainWindow.baml
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.g.resources
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge_51_miniprojekt.Properties.Resources.resources
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.csproj.GenerateResource.cache
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.csproj.CoreCompileInputs.cache
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.exe
+C:\Users\tokek\source\repos\Uge 51 miniprojekt\Uge 51 miniprojekt\obj\Debug\Uge 51 miniprojekt.pdb

@@ -4,9 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Uge_51_miniprojekt"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize=" 18"
+        Title="Pizza Palace" Height="451" Width="799">
     <Grid>
-        
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width=" 20"/>
+            <ColumnDefinition Width=" auto"/>
+            <ColumnDefinition Width=" auto"/>
+            <ColumnDefinition Width=" auto"/>
+            <ColumnDefinition Width=" *"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height=" 20"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" *"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" 
+                   Text="hi qols" FontFamily="SimSun" FontSize="36" Grid.ColumnSpan="3"
+                   Margin=" 0,0,0,10"/>
+
+        <TextBlock Grid.Row=" 2" Grid.Column=" 1" 
+                   Text=" Alm" FontFamily=" SumSun"/>
+
+        <TextBox x:Name="pizza" Grid.Column=" 2" Grid.Row=" 2"
+                 Width=" 150"/>
     </Grid>
 </Window>

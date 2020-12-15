@@ -20,19 +20,21 @@ namespace Uge_51_miniprojekt
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Pizza> choice = new List<Pizza>(); 
+        //public List<Pizza> choice = new List<Pizza>(); 
+
+        public static List<string> choice = new List<string>();
 
         public MainWindow()
         {
             InitializeComponent();
+            Pizza();
+            //choice .Add(new Pizza { pizzaName  = "Margarita", price = "alm: 50, fam: 100" , indgredienser = "tomat, ost, origano"});
+            //choice .Add(new Pizza { pizzaName  = "Dirty Joe's", price = "alm: 75, fam: 150",indgredienser = "tomat, ost, sardiner, bacon, sild, nutella, origano" });
+            //choice.Add(new Pizza { pizzaName = "Skinke", price = "alm: 60, fam: 120", indgredienser = "tomat, ost, skinke, origano" });
+            //choice.Add(new Pizza { pizzaName = "Byg selv", price = "alm: 80, fam: 160", indgredienser = "tomat, ost, skinke, +5 efter eget valg" });
 
-            choice .Add(new Pizza { pizzaName  = "Margarita", price = "alm: 50, fam: 100" , indgredienser = "tomat, ost, origano"});
-            choice .Add(new Pizza { pizzaName  = "Dirty Joe's", price = "alm: 75, fam: 150",indgredienser = "tomat, ost, sardiner, bacon, sild, nutella, origano" });
-            choice .Add(new Pizza { pizzaName  = "Skinke" , price ="alm: 60, fam: 120", indgredienser = "tomat, ost, skinke, origano" });
 
-            choice.ForEach(Console.WriteLine);
-
-            myComboBox.ItemsSource = choice;
+       //     myComboBox.ItemsSource = choice;
         }
 
         //Denne void siger hvad der sker når man trykker på submit knappen
@@ -42,24 +44,53 @@ namespace Uge_51_miniprojekt
         //    MessageBox.Show("Du vil gerne have en " + pizza.Text + " pizza");
         //}
 
+        #region This works
         //Valg af pizza
-        public class Pizza
+        //public class Pizza
+        //{
+
+        //    public string pizzaName { get; set; }
+
+        //    public string price { get; set; }
+
+        //    public string indgredienser { get; set; }
+
+        //    public string fullFizza
+        //    {
+        //        get
+        //        {
+        //            return pizzaName + " pizza " + price + " " + indgredienser;
+        //        }
+        //    }
+
+        //}
+        #endregion 
+
+        public static void  Pizza ()
         {
 
-            public string pizzaName { get; set; }
+           choice .Add( "Margarita alm: 50, fam: 100 indgredienser tomat, ost, origano");
+           choice .Add( "Dirty Joe's alm: 75, fam: 150 indgredienser tomat, ost, sardiner, bacon, sild, nutella, origano" );
+           choice.Add( "Skinke alm: 60, fam: 120 indgredienser tomat, ost, skinke, origano" );
+           choice.Add("Byg selv alm: 80, fam: 160 indgredienser  tomat, ost, skinke, +5 efter eget valg" );
 
-            public string price { get; set; }
+        }
 
-            public string indgredienser { get; set; }
+        private void sizeNormal_Checked(object sender, RoutedEventArgs e)
+        {
+            this.sizeBig.IsChecked = false;
+        }
 
-            public string fullFizza
-            {
-                get
-                {
-                    return pizzaName + " pizza " + price + " " + indgredienser;
-                }
-            }
+        private void sizeBig_Checked(object sender, RoutedEventArgs e)
+        {
+            this.sizeNormal.IsChecked = false;
+        }
 
+        private void myComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.pris.Text = (string)((ComboBoxItem)((ComboBox)sender).SelectedValue).Content;
+
+            
         }
     }
 }

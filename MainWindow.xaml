@@ -7,8 +7,12 @@
         mc:Ignorable="d" FontSize=" 18"
         Title="Pizza Palace" Height="451" Width="799">
     <Grid>
+        <!-- Rækker lodret -->
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width=" 20"/>
+            <ColumnDefinition Width=" auto"/>
+            <ColumnDefinition Width=" auto"/>
+            <ColumnDefinition Width=" auto"/>
             <ColumnDefinition Width=" auto"/>
             <ColumnDefinition Width=" auto"/>
             <ColumnDefinition Width=" auto"/>
@@ -16,8 +20,11 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Rækker Vandret-->
         <Grid.RowDefinitions >
             <RowDefinition Height=" 20"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
             <RowDefinition Height=" auto"/>
             <RowDefinition Height=" auto"/>
             <RowDefinition Height=" auto"/>
@@ -27,36 +34,57 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
+        <!-- vandret 1, lodret 1-->
         <TextBlock Grid.Column="1" Grid.Row="1" 
                    Text="Pizza Palace" FontFamily="SimSun" FontSize="36" Grid.ColumnSpan="3"
                    Margin=" 0,0,0,10"/>
-
+        <!-- vandret 2, lodret 1-->
         <TextBlock Grid.Row=" 2" Grid.Column=" 1" 
                    Text="Dit valg" FontFamily=" SumSun"/>
 
         <!--<TextBox x:Name="pizza" Grid.Column=" 2" Grid.Row=" 2"
                  Width=" 150" Margin=" 10,0,0,0"/>-->
-      
+        
+        
+        <!-- vandret 3, lodret 1-->
         <ComboBox Name="myComboBox" Grid.Column=" 1" Grid.Row=" 3" Grid.ColumnSpan=" 2"
-                  Margin=" 0,10">
-            
-            <ComboBox.ItemTemplate >
+                  Margin=" 0,10" SelectionChanged="myComboBox_SelectionChanged">
+             
+            <!-- Vælg din pizza Ved hjælp af classes-->
+            <!--<ComboBox.ItemTemplate >
                 <DataTemplate >
                     <StackPanel Orientation="Horizontal" >
                         <Image Source="C:\Users\tokek\OneDrive\Billeder\Tokes konfi\far.jpg" Height=" 20" Width=" 20"/>
                         <TextBlock Text="{Binding pizzaName}"/>
-                        <TextBlock Text=" "/>
+                        <TextBlock Text=" pizza - "/>
                         <TextBlock Text="{Binding price}"/>
-                        <TextBlock Text=" "/>
+                        <TextBlock Text=" - "/>
                         <TextBlock Text="{Binding indgredienser}"/>
                     </StackPanel>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
+            </ComboBox.ItemTemplate>-->
+
+            <ComboBoxItem >Margarita alm: 50, fam: 100 indgredienser tomat, ost, origano</ComboBoxItem>
+            <ComboBoxItem >Dirty Joe's alm: 75, fam: 150 indgredienser tomat, ost, sardiner, bacon, sild, nutella, origano</ComboBoxItem>
+            <ComboBoxItem >Skinke alm: 60, fam: 120 indgredienser tomat, ost, skinke, origano</ComboBoxItem>
+            <ComboBoxItem >Byg selv alm: 80, fam: 160 indgredienser  tomat, ost, skinke, +5 efter eget valg</ComboBoxItem>
         </ComboBox>
 
+        <!-- -->
+        <CheckBox x:Name="sizeNormal" Content="Alm" Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sizeNormal_Checked"/>
+        <CheckBox x:Name="sizeBig" Content="Fam" Grid.Row="3" Grid.Column=" 5" Margin=" 10 20 0 0" Checked="sizeBig_Checked"/>
 
+
+        <CheckBox x:Name="ost" Content="Ost +5" Grid.Row="5" Grid.Column="1"/>
+        <CheckBox x:Name="skinke" Content="Skine +5" Grid.Row="5" Grid.Column="2"/>
+        <CheckBox x:Name="salat" Content="Salat +10" Grid.Row="6" Grid.Column="1"/>
+        <CheckBox x:Name="tun" Content="Tun +5" Grid.Row="6" Grid.Column="2"/>
+        <CheckBox x:Name="hvidløg" Content="Hvidløg gratis" Grid.Row="7" Grid.Column="1"/>
+        
+        
+        <!-- Billide prøve-->
         <!--<Image Grid.Row=" 1" Grid.Column=" 4" Grid.RowSpan=" 6" Source="C:\Users\tokek\OneDrive\Billeder\Tokes konfi\far.jpg"/>-->
-
+<!-- En scoll bar-->
         <!--<ScrollViewer Grid.Row=" 1" Grid.Column=" 4" Grid.RowSpan=" 6">
             <StackPanel  Orientation="Vertical">
                 <Image MaxHeight=" 200" MaxWidth=" 200" Source="C:\Users\tokek\OneDrive\Desktop\Min konfi\min konfi 019.jpg"/>
@@ -68,6 +96,8 @@
                 <Image MaxHeight=" 200" MaxWidth=" 200" Source="C:\Users\tokek\OneDrive\Desktop\Min konfi\min konfi 023.jpg"/>
             </StackPanel>
         </ScrollViewer>-->
-        
+
+        <TextBlock Grid.Row="9" Grid.Column=" 7" Text="Pris" Margin="30 -10 0 0"/>
+        <TextBox x:Name="pris" Padding="2" Grid.Column=" 7" Text="Pris" Margin="30 -10 0 0"/>
     </Grid>
 </Window>

@@ -25,10 +25,12 @@ namespace Uge_51_miniprojekt
         public static List<string> choice = new List<string>();
         public static int counter;
         public static double samletPris;
+        public static double enkeltPris;
 
         public MainWindow()
         {
             InitializeComponent();
+            pris .Text = Convert .ToString (enkeltPris );
             {
                 //choice .Add(new Pizza { pizzaName  = "Margarita", price = "alm: 50, fam: 100" , indgredienser = "tomat, ost, origano"});
                 //choice .Add(new Pizza { pizzaName  = "Dirty Joe's", price = "alm: 75, fam: 150",indgredienser = "tomat, ost, sardiner, bacon, sild, nutella, origano" });
@@ -94,69 +96,13 @@ namespace Uge_51_miniprojekt
 
             if (sizeBig.IsChecked == false && sizeNormal.IsChecked == false)
             {
+
                 this.prisIAlt.Text = null;
             }
-
-            //Tilbehør Normal
-            {
-                //Pris på tilbehør
-                {
-                    if (sizeBig.IsChecked == false || sizeNormal.IsChecked == true)
-                    {
-                        if (skinke.IsChecked == true)
-                        {
-                            samletPris += 5;
-                            counter++;
-                        }
-
-                        if (tun.IsChecked == true)
-                        {
-                            samletPris += 5;
-                            counter++;
-                        }
-                        if (græskerKerner.IsChecked == true)
-                        {
-                            samletPris += 5;
-                            counter++;
-                        }
-
-                        if (majs.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 5;
-                        }
-
-                        if (kastanjer.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 5;
-                        }
-
-                        if (ost.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 5;
-                        }
-
-                        if (salat.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 10;
-                        }
-                    }
-                }
-
-                //Print på skærmen
-                {
-                    skinke.Content = "Skinke +5";
-                    ost.Content = "Ost +5";
-                    kastanjer.Content = "Kastanjer +5";
-                    græskerKerner.Content = "Græsker kerner +5";
-                    salat.Content = "Salat +10";
-                    majs.Content = "Majs +5";
-                    tun.Content = "Tun +5";
-                }
-            }
+Tilbehør ();
+            
+            enkeltPris = samletPris ;
+            pris .Text = Convert.ToString (enkeltPris );
 
         }
 
@@ -171,65 +117,10 @@ namespace Uge_51_miniprojekt
 
             }
 
-
-            //Tilbehør Stor
-            {
-                //Pris på tilbehør
-                {
-                    if (sizeBig.IsChecked == true || sizeNormal.IsChecked == false)
-                    {
-                        if (skinke.IsChecked == true)
-                        {
-                            samletPris += 10;
-                            counter++;
-                        }
-
-                        if (tun.IsChecked == true)
-                        {
-                            samletPris += 10;
-                            counter++;
-                        }
-                        if (græskerKerner.IsChecked == true)
-                        {
-                            samletPris += 10;
-                            counter++;
-                        }
-
-                        if (majs.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 10;
-                        }
-
-                        if (kastanjer.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 10;
-                        }
-
-                        if (ost.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 10;
-                        }
-
-                        if (salat.IsChecked == true)
-                        {
-                            counter++;
-                            samletPris += 15;
-                        }
-                    }
-
-                    //Print på skærm
-                    skinke.Content = "Skinke +10";
-                    ost.Content = "Ost +10";
-                    kastanjer.Content = "Kastanjer +10";
-                    græskerKerner.Content = "Græsker kerner +10";
-                    salat.Content = "Salat +15";
-                    majs.Content = "Majs +10";
-                    tun.Content = "Tun +10";
-                }
-            }
+            Tilbehør ();
+            
+            enkeltPris = samletPris ;
+            pris .Text = Convert.ToString (enkeltPris );
         }
         #endregion 
 
@@ -418,6 +309,138 @@ namespace Uge_51_miniprojekt
                 
             }
 
+            enkeltPris = samletPris ;
+            pris .Text = Convert.ToString (enkeltPris );
+        }
+
+        public static void Tilbehør()
+        {
+
+            //Pris på tilbehør, hvis normal
+            {
+              //normal
+              {    
+                    if (sizeBig.IsChecked == false || sizeNormal.IsChecked == true)
+                    {
+                        if (skinke.IsChecked == true)
+                        {
+                            samletPris += 5;
+                            counter++;
+                        }
+
+                        if (tun.IsChecked == true)
+                        {
+                            samletPris += 5;
+                            counter++;
+                        }
+                        if (græskerKerner.IsChecked == true)
+                        {
+                            samletPris += 5;
+                            counter++;
+                        }
+
+                        if (majs.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 5;
+                        }
+
+                        if (kastanjer.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 5;
+                        }
+
+                        if (ost.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 5;
+                        }
+
+                        if (salat.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 10;
+                        }
+                    }
+                }
+
+
+                //Print på skærmen
+                {
+                    skinke.Content = "Skinke +5";
+                    ost.Content = "Ost +5";
+                    kastanjer.Content = "Kastanjer +5";
+                    græskerKerner.Content = "Græsker kerner +5";
+                    salat.Content = "Salat +10";
+                    majs.Content = "Majs +5";
+                    tun.Content = "Tun +5";
+                }
+            }
+
+            //Pris på tilbehør, hvis stor
+            {
+                
+              //Tilbehør Stor
+              {
+                //Pris på tilbehør
+                {
+                    if (sizeBig.IsChecked == true || sizeNormal.IsChecked == false)
+                    {
+                        if (skinke.IsChecked == true)
+                        {
+                            samletPris += 10;
+                            counter++;
+
+                        }
+
+                        if (tun.IsChecked == true)
+                        {
+                            samletPris += 10;
+                            counter++;
+                        }
+                        if (græskerKerner.IsChecked == true)
+                        {
+                            samletPris += 10;
+                            counter++;
+                        }
+
+                        if (majs.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 10;
+                        }
+
+                        if (kastanjer.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 10;
+                        }
+
+                        if (ost.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 10;
+                        }
+
+                        if (salat.IsChecked == true)
+                        {
+                            counter++;
+                            samletPris += 15;
+                        }
+                    }
+
+                    //Print på skærm
+                    skinke.Content = "Skinke +10";
+                    ost.Content = "Ost +10";
+                    kastanjer.Content = "Kastanjer +10";
+                    græskerKerner.Content = "Græsker kerner +10";
+                    salat.Content = "Salat +15";
+                    majs.Content = "Majs +10";
+                    tun.Content = "Tun +10";
+                }
+            }
+            }
         }
 
         ///Knapper
@@ -425,66 +448,21 @@ namespace Uge_51_miniprojekt
         //Samlet pris
         private void add_Click(object sender, RoutedEventArgs e)
         {
-
-            //Størrelse
-            {
-                if (sizeNormal.IsChecked == true)
-                {
-                    if (myComboBox.SelectedItem == marg)
-                    {
-                        samletPris += 50;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == dirtyJoe)
-                    {
-                        samletPris += 75;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == skinkePizza)
-                    {
-                        samletPris += 60;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == bygSelv)
-                    {
-                        samletPris += 80;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-                }
-
-                if (sizeBig.IsChecked == true)
-                {
-                    if (myComboBox.SelectedItem == marg)
-                    {
-                        samletPris += 100;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == dirtyJoe)
-                    {
-                        samletPris += 150;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == skinkePizza)
-                    {
-                        samletPris += 120;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-
-                    if (myComboBox.SelectedItem == bygSelv)
-                    {
-                        samletPris += 160;
-                        choice.Add(Convert.ToString(myComboBox.SelectedItem));
-                    }
-                }
-            }
+            Tilbehør ();
 
             counter = 0;
+            enkeltPris =0;
+            pris . Text =null ;
             prisIAlt.Text = Convert.ToString(samletPris);
+            
+            ost.IsChecked  =                                false;
+                skinke .IsChecked =                         false;
+                salat.IsChecked  =                          false;
+                tun.IsChecked =                             false;
+                majs .IsChecked =                           false;
+                kastanjer .IsChecked =                      false;
+                græskerKerner .IsChecked =                  false;
+                hvidløg .IsChecked =                        false;
         }
 
         //Reset knap
@@ -493,7 +471,16 @@ namespace Uge_51_miniprojekt
             samletPris = 0;
             prisIAlt.Text = Convert.ToString(samletPris);
             counter = 0;
-        }
+
+            ost.IsChecked  =                                false;
+                skinke .IsChecked =                         false;
+                salat.IsChecked  =                          false;
+                tun.IsChecked =                             false;
+                majs .IsChecked =                           false;
+                kastanjer .IsChecked =                      false;
+                græskerKerner .IsChecked =                  false;
+                hvidløg .IsChecked =                        false;
+        }                        
         #endregion 
     }
 }

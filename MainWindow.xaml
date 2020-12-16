@@ -109,7 +109,7 @@
             </StackPanel>
         </ScrollViewer>-->
 
-        <TextBlock Grid.Row="11" Grid.Column=" 1" Text="Pris" Margin="30 0 0 0" Grid.ColumnSpan=" 3"/>
+        <TextBlock Grid.Row="11" Grid.Column=" 1" Text="Pris i alt" Margin="30 0 0 0" Grid.ColumnSpan=" 3"/>
         
         <!-- samlet Pris -->
         <TextBox IsReadOnly="True" x:Name="prisIAlt" Padding="2" Grid.Column=" 2" Grid.Row="11" Text="Pris" Margin="30 0 0 0"/>

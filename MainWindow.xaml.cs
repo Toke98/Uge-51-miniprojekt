@@ -35,7 +35,7 @@ namespace Uge_51_miniprojekt
                 //choice.Add(new Pizza { pizzaName = "Skinke", price = "alm: 60, fam: 120", indgredienser = "tomat, ost, skinke, origano" });
                 //choice.Add(new Pizza { pizzaName = "Byg selv", price = "alm: 80, fam: 160", indgredienser = "tomat, ost, skinke, +5 efter eget valg" });
 
-
+                
                 //     myComboBox.ItemsSource = choice;
             }
         }
@@ -237,6 +237,7 @@ namespace Uge_51_miniprojekt
         private void myComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  this.pris.Text = (string)((ComboBoxItem)((ComboBox)sender).SelectedValue).Content;
+            // Byg Selv
             if (this.myComboBox.SelectedItem == bygSelv && 4>counter )
             {
                 skinke.Content = "Skinke";

@@ -67,11 +67,15 @@
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>-->
-
+            <ComboBoxItem >---Pizza---</ComboBoxItem>
             <ComboBoxItem x:Name="marg" >Margarita alm: 50, fam: 100 indgredienser tomat, ost, origano</ComboBoxItem>
             <ComboBoxItem  x:Name="dirtyJoe" >Dirty Joe's alm: 75, fam: 150 indgredienser tomat, ost, sardiner, bacon, sild, nutella, origano</ComboBoxItem>
             <ComboBoxItem x:Name="skinkePizza" >Skinke alm: 60, fam: 120 indgredienser tomat, ost, skinke, origano</ComboBoxItem>
             <ComboBoxItem  x:Name="bygSelv" >Byg selv alm: 70, fam: 140 indgredienser  tomat, ost, skinke, +4 efter eget valg</ComboBoxItem>
+            <ComboBoxItem x:Name="drikke" >---Drikkevare---</ComboBoxItem>
+            <ComboBoxItem x:Name="pepsi">Pepsi</ComboBoxItem>
+            <ComboBoxItem x:Name="fanta">Fanta</ComboBoxItem>
+            <ComboBoxItem x:Name="sprite">Sprite</ComboBoxItem>
         </ComboBox>
 
         <!-- Vælg Pizza -->
@@ -79,9 +83,14 @@
         <!-- Pris -->
         <TextBox IsReadOnly="True" x:Name="pris" Padding="2" Grid.Column=" 1" Grid.Row="9" Text="Pris" Margin="100 10 0 10"/>
 
-        <!-- Size -->
+        <!-- Size Pizza -->
         <CheckBox x:Name="sizeNormal" Content="Alm" Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sizeNormal_Checked" />
         <CheckBox x:Name="sizeBig" Content="Fam" Grid.Row="3" Grid.Column=" 5" Margin=" 10 20 0 0" Checked="sizeBig_Checked"/>
+        
+        <!-- Size Soda-->
+        <CheckBox x:Name="sodaSizeSmall" Visibility="Hidden" Content="33cl 15kr." Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sodaSizeSmall_Checked"/>
+        <CheckBox x:Name="sodaSizeNormal" Visibility="Hidden" Content="500ml 20kr." Grid.Row="3" Grid.Column=" 5" Margin="10 20 0 0" Checked="sodaSizeNormal_Checked"/>
+        <CheckBox x:Name="sodaSizeBig" Visibility="Hidden" Content="1,5L 40kr." Grid.Row="3" Grid.Column=" 6" Margin=" 10 20 0 0" Checked="sodaSizeBig_Checked"/>
 
 
         <CheckBox x:Name="ost" Content="Ost +5" Grid.Row="5" Grid.Column="1" Margin=" 5 0 0 0"/>

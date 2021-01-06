@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Uge_51_miniprojekt"
         mc:Ignorable="d" FontSize=" 18"
-        Title="Pizza Palace" Height="451" Width="1000">
+        Title="Pizza Palace" Height="451" Width="1200">
     <Grid>
         <!-- Rækker lodret -->
         <Grid.ColumnDefinitions >
@@ -84,25 +84,27 @@
         <TextBox IsReadOnly="True" x:Name="pris" Padding="2" Grid.Column=" 1" Grid.Row="9" Text="Pris" Margin="100 10 0 10"/>
 
         <!-- Size Pizza -->
-        <CheckBox x:Name="sizeNormal" Content="Alm" Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sizeNormal_Checked" />
-        <CheckBox x:Name="sizeBig" Content="Fam" Grid.Row="3" Grid.Column=" 5" Margin=" 10 20 0 0" Checked="sizeBig_Checked"/>
+        <CheckBox x:Name="sizeNormal" Content="Alm" Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sizeNormal_Checked" Click="Check_Click" />
+        <CheckBox x:Name="sizeBig" Content="Fam" Grid.Row="3" Grid.Column=" 5" Margin=" 10 20 0 0" Checked="sizeBig_Checked" Click="Check_Click"/>
         
         <!-- Size Soda-->
-        <CheckBox x:Name="sodaSizeSmall" Visibility="Hidden" Content="33cl 15kr." Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sodaSizeSmall_Checked"/>
-        <CheckBox x:Name="sodaSizeNormal" Visibility="Hidden" Content="500ml 20kr." Grid.Row="3" Grid.Column=" 5" Margin="10 20 0 0" Checked="sodaSizeNormal_Checked"/>
-        <CheckBox x:Name="sodaSizeBig" Visibility="Hidden" Content="1,5L 40kr." Grid.Row="3" Grid.Column=" 6" Margin=" 10 20 0 0" Checked="sodaSizeBig_Checked"/>
+        <CheckBox x:Name="sodaSizeSmall" Visibility="Hidden" Content="33cl 15kr." Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sodaSizeSmall_Checked" Click="Check_Click" />
+        <CheckBox x:Name="sodaSizeNormal" Visibility="Hidden" Content="500ml 25kr." Grid.Row="3" Grid.Column=" 5" Margin="10 20 0 0" Checked="sodaSizeNormal_Checked" Click="Check_Click"/>
+        <CheckBox x:Name="sodaSizeBig" Visibility="Hidden" Content="1,5L 40kr." Grid.Row="3" Grid.Column=" 6" Margin=" 10 20 0 0" Checked="sodaSizeBig_Checked" Click="Check_Click"/>
 
+<!-- Tilbehør-->
+        <CheckBox x:Name="ost" Content="Ost +5" Grid.Row="5" Grid.Column="1" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="skinke" Content="Skine +5" Grid.Row="5" Grid.Column="2" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="salat" Content="Salat +10" Grid.Row="6" Grid.Column="1" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="tun" Content="Tun +5" Grid.Row="6" Grid.Column="2" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="majs" Content="Majs +5" Grid.Row="7" Grid.Column="2" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="græskerKerner" Content="Græskar kerner +5" Grid.Row="8" Grid.Column="2" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="kastanjer" Content="Kastanjer +5" Grid.Row="7" Grid.Column="1" Margin=" 5 0 0 0" Click="Check_Click"/>
+        <CheckBox x:Name="hvidløg" Content="Hvidløg gratis" Grid.Row="8" Grid.Column="1" Margin=" 5 0 0 0" Click="Check_Click"/>
+        
+        <!-- Indkøbsliste -->
+        <TextBlock x:Name="liste" Grid.Column=" 6" Grid.Row=" 10"/>
 
-        <CheckBox x:Name="ost" Content="Ost +5" Grid.Row="5" Grid.Column="1" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="skinke" Content="Skine +5" Grid.Row="5" Grid.Column="2" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="salat" Content="Salat +10" Grid.Row="6" Grid.Column="1" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="tun" Content="Tun +5" Grid.Row="6" Grid.Column="2" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="majs" Content="Majs +5" Grid.Row="7" Grid.Column="2" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="græskerKerner" Content="Græskar kerner +5" Grid.Row="8" Grid.Column="2" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="kastanjer" Content="Kastanjer +5" Grid.Row="7" Grid.Column="1" Margin=" 5 0 0 0"/>
-        <CheckBox x:Name="hvidløg" Content="Hvidløg gratis" Grid.Row="8" Grid.Column="1" Margin=" 5 0 0 0" />
-        
-        
         <!-- Billide prøve-->
         <!--<Image Grid.Row=" 1" Grid.Column=" 4" Grid.RowSpan=" 6" Source="C:\Users\tokek\OneDrive\Billeder\Tokes konfi\far.jpg"/>-->
 <!-- En scoll bar-->

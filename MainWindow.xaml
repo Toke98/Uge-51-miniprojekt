@@ -32,6 +32,10 @@
             <RowDefinition Height=" auto"/>
             <RowDefinition Height=" auto"/>
             <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
+            <RowDefinition Height=" auto"/>
             <RowDefinition Height=" *"/>
             <RowDefinition Height=" auto"/>
             <RowDefinition Height="20"/>
@@ -41,6 +45,8 @@
         <TextBlock Grid.Column="1" Grid.Row="1" 
                    Text="Pizza Palace" FontFamily="SimSun" FontSize="36" Grid.ColumnSpan="3"
                    Margin=" 0,0,0,10"/>
+        <Label Content="Køb to sodavander, og to pizzaer, og du får den dyreste pizzadej i rabat" 
+               Grid.Row=" 1" Grid.Column=" 2" Grid.ColumnSpan=" 5" Margin=" 0 30 0 0" FontStyle="Italic"/>
         <!-- vandret 2, lodret 1-->
         <TextBlock Grid.Row=" 2" Grid.Column=" 1" 
                    Text="Dit valg" FontFamily=" SumSun"/>
@@ -49,6 +55,7 @@
                  Width=" 150" Margin=" 10,0,0,0"/>-->
         
         
+        <!-- Pizza udvalg -->
         <!-- vandret 3, lodret 1-->
         <ComboBox Name="myComboBox" Grid.Column=" 1" Grid.Row=" 3" Grid.ColumnSpan=" 2"
                   Margin=" 0,10" SelectionChanged="myComboBox_SelectionChanged"
@@ -67,11 +74,12 @@
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>-->
+            
             <ComboBoxItem >---Pizza---</ComboBoxItem>
             <ComboBoxItem x:Name="marg" >Margarita alm: 50, fam: 100 indgredienser tomat, ost, origano</ComboBoxItem>
             <ComboBoxItem  x:Name="dirtyJoe" >Dirty Joe's alm: 75, fam: 150 indgredienser tomat, ost, sardiner, bacon, sild, nutella, origano</ComboBoxItem>
             <ComboBoxItem x:Name="skinkePizza" >Skinke alm: 60, fam: 120 indgredienser tomat, ost, skinke, origano</ComboBoxItem>
-            <ComboBoxItem  x:Name="bygSelv" >Byg selv alm: 70, fam: 140 indgredienser  tomat, ost, skinke, +4 efter eget valg</ComboBoxItem>
+            <ComboBoxItem  x:Name="bygSelv" >Byg selv alm: 70, fam: 140 indgredienser  tomat, ost +4 efter eget valg</ComboBoxItem>
             <ComboBoxItem x:Name="drikke" >---Drikkevare---</ComboBoxItem>
             <ComboBoxItem x:Name="pepsi">Pepsi</ComboBoxItem>
             <ComboBoxItem x:Name="fanta">Fanta</ComboBoxItem>
@@ -80,8 +88,14 @@
 
         <!-- Vælg Pizza -->
         <Button x:Name="add" Content="Add pizza" Grid.Row=" 9" Grid.Column=" 2" Margin="10" Click="add_Click" Grid.ColumnSpan=" 2"/>
+        
         <!-- Pris -->
         <TextBox IsReadOnly="True" x:Name="pris" Padding="2" Grid.Column=" 1" Grid.Row="9" Text="Pris" Margin="100 10 0 10"/>
+        
+        <!-- Rabat -->
+        <TextBox IsReadOnly="True" Visibility="Hidden"  x:Name="rabat" Padding="2" Grid.Column=" 2" Grid.Row="12" Margin="30 5 0 5"/>
+        <Label x:Name="rabatTag" Visibility="Collapsed"   Content="Rabat" Grid.Column=" 1" Grid.Row=" 12" Margin=" 24 0 0 0"/>
+
 
         <!-- Size Pizza -->
         <CheckBox x:Name="sizeNormal" Content="Alm" Grid.Row="3" Grid.Column=" 4" Margin="10 20 0 0" Checked="sizeNormal_Checked" Click="Check_Click" />
@@ -103,7 +117,7 @@
         <CheckBox x:Name="hvidløg" Content="Hvidløg gratis" Grid.Row="8" Grid.Column="1" Margin=" 5 0 0 0" Click="Check_Click"/>
         
         <!-- Indkøbsliste -->
-        <TextBlock x:Name="liste" Grid.Column=" 6" Grid.Row=" 10"/>
+        <TextBlock x:Name="liste" Grid.Column=" 6" Grid.Row=" 5" Grid.RowSpan="10"/>
 
         <!-- Billide prøve-->
         <!--<Image Grid.Row=" 1" Grid.Column=" 4" Grid.RowSpan=" 6" Source="C:\Users\tokek\OneDrive\Billeder\Tokes konfi\far.jpg"/>-->

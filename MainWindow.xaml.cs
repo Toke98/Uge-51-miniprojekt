@@ -28,6 +28,17 @@ namespace Uge_51_miniprojekt
         public static double samletPris;
         public static double enkeltPris;
 
+        public static int pizzaCounter;
+        public static bool pizzaOrNot = false;
+        public static int sodaCounter;
+
+        public static int bygSelvCounter;
+        public static bool bygselvOrNot = false;
+
+        public static int rabatPris;
+        public static bool rabatBrugt = false;
+        public static bool bigOrNot = false;
+
         public static int topings;
         public static bool extraOrNot = false;
 
@@ -155,185 +166,7 @@ namespace Uge_51_miniprojekt
         {
             //  this.pris.Text = (string)((ComboBoxItem)((ComboBox)sender).SelectedValue).Content;
             // Byg Selv
-            if (this.myComboBox.SelectedItem == bygSelv && 4 > counter)
-            {
-                skinke.Content = "Skinke";
-                ost.Content = "Ost";
-                kastanjer.Content = "Kastanjer";
-                græskerKerner.Content = "Græsker kerner";
-                salat.Content = "Salat";
-                majs.Content = "Majs";
-                tun.Content = "Tun";
 
-                // Pris 0kr.
-                if (sizeBig.IsChecked == true || sizeNormal.IsChecked == false)
-                {
-                    if (skinke.IsChecked == true)
-                    {
-                        samletPris += 0;
-                        counter++;
-                    }
-
-                    if (tun.IsChecked == true)
-                    {
-                        samletPris += 0;
-                        counter++;
-                    }
-                    if (græskerKerner.IsChecked == true)
-                    {
-                        samletPris += 0;
-                        counter++;
-                    }
-
-                    if (majs.IsChecked == true)
-                    {
-                        counter++;
-                        samletPris += 0;
-                    }
-
-                    if (kastanjer.IsChecked == true)
-                    {
-                        counter++;
-                        samletPris += 0;
-                    }
-
-                    if (ost.IsChecked == true)
-                    {
-                        counter++;
-                        samletPris += 0;
-                    }
-
-                    if (salat.IsChecked == true)
-                    {
-                        counter++;
-                        samletPris += 0;
-                    }
-                }
-
-                if (counter >= 4)
-                {
-                    //Tilbehør Stor
-                    {
-                        //Pris på tilbehør
-                        {
-                            if (sizeBig.IsChecked == true || sizeNormal.IsChecked == false)
-                            {
-                                if (skinke.IsChecked == true)
-                                {
-                                    samletPris += 10;
-                                    counter++;
-                                }
-
-                                if (tun.IsChecked == true)
-                                {
-                                    samletPris += 10;
-                                    counter++;
-                                }
-                                if (græskerKerner.IsChecked == true)
-                                {
-                                    samletPris += 10;
-                                    counter++;
-                                }
-
-                                if (majs.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 10;
-                                }
-
-                                if (kastanjer.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 10;
-                                }
-
-                                if (ost.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 10;
-                                }
-
-                                if (salat.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 15;
-                                }
-                            }
-
-                            //Print på skærm
-                            skinke.Content = "Skinke +10";
-                            ost.Content = "Ost +10";
-                            kastanjer.Content = "Kastanjer +10";
-                            græskerKerner.Content = "Græsker kerner +10";
-                            salat.Content = "Salat +15";
-                            majs.Content = "Majs +10";
-                            tun.Content = "Tun +10";
-                        }
-                    }
-
-                    //Tilbehør Normal
-                    {
-                        //Pris på tilbehør
-                        {
-                            if (sizeBig.IsChecked == false || sizeNormal.IsChecked == true)
-                            {
-                                if (skinke.IsChecked == true)
-                                {
-                                    samletPris += 5;
-                                    counter++;
-                                }
-
-                                if (tun.IsChecked == true)
-                                {
-                                    samletPris += 5;
-                                    counter++;
-                                }
-                                if (græskerKerner.IsChecked == true)
-                                {
-                                    samletPris += 5;
-                                    counter++;
-                                }
-
-                                if (majs.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 5;
-                                }
-
-                                if (kastanjer.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 5;
-                                }
-
-                                if (ost.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 5;
-                                }
-
-                                if (salat.IsChecked == true)
-                                {
-                                    counter++;
-                                    samletPris += 10;
-                                }
-                            }
-                        }
-
-                        //Print på skærmen
-                        {
-                            skinke.Content = "Skinke +5";
-                            ost.Content = "Ost +5";
-                            kastanjer.Content = "Kastanjer +5";
-                            græskerKerner.Content = "Græsker kerner +5";
-                            salat.Content = "Salat +10";
-                            majs.Content = "Majs +5";
-                            tun.Content = "Tun +5";
-                        }
-                    }
-                }
-
-            }
             enkeltPris = samletPris;
             pris.Text = Convert.ToString(enkeltPris);
 
@@ -396,6 +229,7 @@ namespace Uge_51_miniprojekt
 
                 add.Content = "Add Soda";
             }
+           
         }
 
 
@@ -424,6 +258,8 @@ namespace Uge_51_miniprojekt
                 //Normal Pizza
                 if (sizeNormal.IsChecked == true)
                 {
+                    pizzaOrNot = true;
+                    pizzaCounter++;
                     if (this.myComboBox.SelectedItem == marg)
                     {
                         samletPris += 50;
@@ -452,6 +288,9 @@ namespace Uge_51_miniprojekt
                 //Stor Pizza
                 if (sizeBig.IsChecked == true)
                 {
+                    pizzaCounter++;
+                    pizzaOrNot = true;
+                    bigOrNot = true;
                     if (this.myComboBox.SelectedItem == marg)
                     {
                         samletPris += 100;
@@ -487,6 +326,8 @@ namespace Uge_51_miniprojekt
             //Soda
             if (this.myComboBox.SelectedItem == pepsi || this.myComboBox.SelectedItem == fanta || this.myComboBox.SelectedItem == sprite)
             {
+                pizzaOrNot = false;
+                sodaCounter++;
                 //Valgt sodavan
                 {
                     if (this.myComboBox.SelectedItem == pepsi)
@@ -527,8 +368,139 @@ namespace Uge_51_miniprojekt
                 }
             }
 
+            //Rabat
+            if (pizzaCounter > 1 && sodaCounter > 1 && pizzaOrNot == true)
+            {
+                samletPris += rabatPris;
+                rabat.Visibility = Visibility.Visible;
+                rabatTag.Visibility = Visibility.Visible;
+
+                if (bigOrNot == true)
+                {
+                    rabat.Text = Convert.ToString(10);
+                    rabatPris = 10;
+                }
+
+                if (bigOrNot == false)
+                {
+                    rabat.Text = Convert.ToString(5);
+                    rabatPris = 5;
+                }
+                samletPris -= rabatPris;
+                rabatBrugt = true;
+            }
+
             ///Tilbehør
             {
+                //Pris hvis Byg selv
+                {
+
+
+                    //Bygselv pizza
+                    if (this.myComboBox.SelectedItem == bygSelv && bygSelvCounter <= 4)
+                    {
+                        bygselvOrNot = true;
+                        //normal
+                        {
+                            if (sizeBig.IsChecked == false && sizeNormal.IsChecked == true)
+                            {
+                                bygSelvCounter = 0;
+                                if (skinke.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (tun.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (græskerKerner.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (majs.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (kastanjer.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (ost.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 5;
+                                }
+
+                                if (salat.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+                            }
+                        }
+
+                        //Tilbehør Stor
+                        {
+                            if (sizeBig.IsChecked == true && sizeNormal.IsChecked == false)
+                            {
+                                bygSelvCounter = 0;
+                                if (skinke.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (tun.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (græskerKerner.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (majs.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (kastanjer.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (ost.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 10;
+                                }
+
+                                if (salat.IsChecked == true && bygSelvCounter < 4)
+                                {
+                                    bygSelvCounter++;
+                                    samletPris -= 15;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
                 //Pris på tilbehør, hvis normal
                 {
                     counter = 0;
@@ -727,14 +699,18 @@ namespace Uge_51_miniprojekt
                         }
                     }
                 }
+
             }
 
             liste.Text += " - " + Convert.ToString(enkeltPris)+"kr.";
+
             counter = 0;
             enkeltPris = 0;
             pris.Text = null;
             prisIAlt.Text = Convert.ToString(samletPris);
             liste.Text += Environment.NewLine;
+            bygselvOrNot = false;
+            bygSelvCounter = 0;
 
             //Størrelser
             {
@@ -767,16 +743,32 @@ namespace Uge_51_miniprojekt
             pris.Text = null;
             counter = 0;
 
-            ost.IsChecked = false;
-            skinke.IsChecked = false;
-            salat.IsChecked = false;
-            tun.IsChecked = false;
-            majs.IsChecked = false;
-            kastanjer.IsChecked = false;
-            græskerKerner.IsChecked = false;
-            hvidløg.IsChecked = false;
-            liste.Text = null;
+            //Rabat reset
+            {
+                rabat.Visibility = Visibility.Hidden;
+                rabatTag.Visibility = Visibility.Hidden;
+                rabatBrugt = false;
+                rabatPris = 0;
+                pizzaCounter = 0;
+                sodaCounter = 0;
+                bigOrNot = false;
+                pizzaOrNot = false;
+            }
 
+            //Tilbehørs reset
+            {
+                bygSelvCounter = 0;
+                bygselvOrNot = false;
+                ost.IsChecked = false;
+                skinke.IsChecked = false;
+                salat.IsChecked = false;
+                tun.IsChecked = false;
+                majs.IsChecked = false;
+                kastanjer.IsChecked = false;
+                græskerKerner.IsChecked = false;
+                hvidløg.IsChecked = false;
+                liste.Text = null;
+            }
             this.myComboBox.SelectedIndex = -1;
         }
         #endregion
@@ -912,12 +904,115 @@ namespace Uge_51_miniprojekt
                     }
                 }
 
+
+                //Bygselv pizza
+                if (this.myComboBox.SelectedItem == bygSelv && bygSelvCounter <= 4)
+                {
+                    bygselvOrNot = true;
+                    //normal
+                    {
+                        if (sizeBig.IsChecked == false && sizeNormal.IsChecked == true)
+                        {
+                            bygSelvCounter = 0;
+                            if (skinke.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (tun.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (græskerKerner.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (majs.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (kastanjer.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (ost.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 5;
+                            }
+
+                            if (salat.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+                        }
+                    }
+
+                    //Tilbehør Stor
+                    {
+                        if (sizeBig.IsChecked == true && sizeNormal.IsChecked == false)
+                        {
+                            bygSelvCounter = 0;
+                            if (skinke.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (tun.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (græskerKerner.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (majs.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (kastanjer.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (ost.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 10;
+                            }
+
+                            if (salat.IsChecked == true && bygSelvCounter < 4)
+                            {
+                                bygSelvCounter++;
+                                enkeltPris -= 15;
+                            }
+                        }
+                    }
+                }
+
                 //Normal slags pizza
-                if (this.myComboBox.SelectedItem != bygSelv || counter >4)
                 {
                     //normal
                     {
-                        if (sizeBig.IsChecked == false || sizeNormal.IsChecked == true)
+                        if (sizeBig.IsChecked == false && sizeNormal.IsChecked == true)
                         {
                             if (skinke.IsChecked == true)
                             {
@@ -957,7 +1052,7 @@ namespace Uge_51_miniprojekt
 
                     //Tilbehør Stor
                     {
-                        if (sizeBig.IsChecked == true || sizeNormal.IsChecked == false)
+                        if (sizeBig.IsChecked == true && sizeNormal.IsChecked == false)
                         {
                             if (skinke.IsChecked == true)
                             {
@@ -998,6 +1093,7 @@ namespace Uge_51_miniprojekt
                     }
                 }
 
+
             }
 
             //Soda
@@ -1022,7 +1118,31 @@ namespace Uge_51_miniprojekt
                 }
             }
 
+            //Rabat
+            if (pizzaCounter > 1 && sodaCounter > 1)
+            {
+                samletPris += rabatPris;
+                rabat.Visibility = Visibility.Visible;
+                rabatTag.Visibility = Visibility.Visible;
+
+                if (bigOrNot == true)
+                {
+                    rabat.Text = Convert.ToString(10);
+                    rabatPris = 10;
+                }
+
+                if (bigOrNot == false)
+                {
+                    rabat.Text = Convert.ToString(5);
+                    rabatPris = 5;
+                }
+                samletPris -= rabatPris;
+                rabatBrugt = true;
+            }
+
             pris.Text = Convert.ToString(enkeltPris);
+
+
         }
     }
 }
